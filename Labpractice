@@ -1,0 +1,25 @@
+<!Doctype html>
+<html>
+
+<body>
+        <h2>My Fruit Shop</h2>
+        <div>
+            <p>This is my fruit shop. We pick up fruit from farms daily. Every variety is so fresh. Enjoy!</p>
+            <a href="https://www.thefarmpatch.com"> My Fruit Shop Web Site </a>
+            <ol type="I"
+                <li> Banana </li>
+                <li> Apple </li>
+                <li> Orange </li>
+        </ol>
+        <p> Please fill out the customer satisfaction questionnaire </p>
+        <form>
+            Your Comments:
+            <br>
+            <textarea rows = "10" cols = "40"></textarea>
+            <br>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+</body>>
+
+</html>
