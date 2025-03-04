@@ -1,0 +1,78 @@
+//Create a function named Run within our script.js page. 
+//Currently it accepts no parameters and does nothing. 
+//It is very exciting.
+function Run()
+{   
+    var theJSON =  
+    {
+        "data": [
+            {"pointId": 1, "lat": 30.61586, "lon": -96.35557},
+            {"pointId": 2, "lat": 30.61724, "lon": -96.3368},
+            {"pointId": 3, "lat": 30.60649, "lon": -96.35613},
+            {"pointId": 4, "lat": 30.60718, "lon": -96.33817},
+            {"pointId": 5, "lat": 30.61479, "lon": -96.34729},
+        ]
+    };
+// script
+function calculateBoundingBox (data) {
+    let maxLat = - Infinity;
+    let minLat = Infinity;
+    let maxLon = -Infinity;
+    let minLon = Infinity;
+
+//finding the maximum and minimum latitudes and longitudes
+    data.forEach(point => {
+        const { lat, lon } = point;
+
+        if (lat > maxLat) maxLat = lat;
+        if (lat < minLat) minLat = lat;
+        if (lon > maxLon) maxLon = lon;
+        if (lon < minLon) minLon = lon;
+    });
+
+function run() {
+    var topLeftPoint = findTopLeft(data);
+    var topRightPoint = findTopRight(data);
+    var bottomLeftPoint = findBottomLeft(data);
+    var bottomRightPoint = findBottomRight(data);
+    };
+
+const topLeft = { lat: maxLat, lon: minLon };
+const topRight = { lat: maxLat, lon: maxLon };
+const bottomLeft = { lat: minLat, lon: minLon };
+const bottomRight = { lat: minLat, lon: maxLon };
+
+return { topLeft, topRight, bottomLeft, bottomRight };
+
+};
+
+function displayBoundingBox() {
+    const boundingBox = calculateBoundingBox(data);
+    const outputElement = document.getElementbyId('boundingBoxOutput');
+    outputElement.textContent = JSON.stringify(boundingBox, null, 2);
+ };
+
+ window.onload = displayBoundingBox;
+ window.onload = run;
+ 
+
+
+const popupButton= document.getElementbyId("popupButton");
+const popup = document.getElementById("popup");
+const closeButton = document.getElementById("closeButton");
+
+popupButton.addEventListener("click", () => {
+    popup.style.display = "relative";
+});
+closeButton.addEventListener("click", () => {
+    popup.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+    if (e.target === popup) {
+        popup.style.display = "none";
+    }
+});
+console.log("Bounding box computed for scarrasco98@tamu.edu");
+console.log(boundingBox);
+}

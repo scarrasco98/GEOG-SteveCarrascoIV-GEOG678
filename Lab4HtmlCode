@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<!-- First line of code in all of your HTML documents. Declaration of version of HTML -->
+
+<html lang="en"> 
+<!-- Container for the document-->
+
+    <!-- Setting a creative title for the page -->
+    <head>
+      <title> Lab 4 </title>
+      <style>
+        body {
+            font-family: Times New Roman, serif;
+            margin: 20px;
+        }
+        h1 {
+            color:brown;
+        }
+        pre {
+            background-color:antiquewhite;
+            padding: 10px;
+            border-radius: 2px;
+            font-size: 12px;
+
+        }
+        .popup-content img {
+            background-color:antiquewhite;
+            padding: 20px;
+            border-radius: 5px;
+            width: 50%;
+            height: auto;
+            margin-top: 20px;
+        }
+      </style>
+    </head>
+
+    <!-- The body of our document which contains things to be rendered by the browser-->
+    <body> 
+        <h1> Calculations for Bounding Box</h1>
+        <h2> Coordinates for Bounding Box</h2>
+        <pre id="boundingBoxOutput"></pre>
+
+        <!-- Make a button -->
+        <input type='button' value='Image Related to Obesity' onclick="showImage()"></input>
+
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" id="closeButton">&times;</span>
+                <img id="Image" src="https://www.verywellhealth.com/thmb/zDbUu1BJ4D93G2rUcyl-pfHU6Oo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/obesity-signs-symptoms-and-complications-4689168-v1-f9b474a31054404bb2307b221303c9e9.png" alt="Obesity Awareness Photo">
+            </div>
+        </div>
+
+     <!-- Pull in the code within an external javascript file (located in the same directory) -->
+     <script src='Lab 4 data.js'>
+        function showImage() {
+            var image = document.getElementById("Image");
+            newImage.style.display = "block";
+        }
+     </script>
+
+     
+    </body>
+</html>
